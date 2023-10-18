@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+
 function AddProduct() {
   const [productData, setProductData] = useState({
     name: '',
     price: '',
-    description: ''
+    description: '',
+    category: '' // New category field
   });
 
   const handleChange = (e) => {
@@ -47,6 +49,15 @@ function AddProduct() {
             type="text"
             name="description"
             value={productData.description}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label>Category:</label>
+          <input
+            type="text"
+            name="category"
+            value={productData.category}
             onChange={handleChange}
           />
         </div>
